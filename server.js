@@ -28,8 +28,8 @@ var express = require("express");
 var app = express();
 var WebSocket = require("ws");
 
-const key = fs.readFileSync("/etc/letsencrypt/live/wss.contribute.cam/privkey.pem"); /// UPDATE THIS PATH
-const cert = fs.readFileSync("/etc/letsencrypt/live/wss.contribute.cam/fullchain.pem"); /// UPDATE THIS PATH
+const key: fs.readFileSync('key.pem'),
+const cert: fs.readFileSync('cert.pem')
 
 var server = https.createServer({key,cert}, app);
 var websocketServer = new WebSocket.Server({ server });
