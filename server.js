@@ -28,8 +28,8 @@ var express = require("express");
 var app = express();
 var WebSocket = require("ws");
 
-const key: fs.readFileSync('key.pem');
-const cert: fs.readFileSync('cert.pem');
+const key = fs.readFileSync('key.pem');
+const cert = fs.readFileSync('cert.pem');
 
 var server = https.createServer({key,cert}, app);
 var websocketServer = new WebSocket.Server({ server });
